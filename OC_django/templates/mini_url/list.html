@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniURL - List</title>
+</head>
+<body>
+<ul>
+    {% for redirection in redirections %}
+        <li>{{ redirection.author }} - <a href="http://{{ request.get_host }}/r/{{ redirection.code }}">{{ redirection.code }}</a> - {{ redirection.url }} - {{ redirection.redirect_access }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

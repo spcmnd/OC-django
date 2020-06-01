@@ -5,7 +5,10 @@
     <title>Mini URL</title>
 </head>
 <body>
-    {% if sent %}<p>Form sent by success!</p>{% endif %}
+    {% if sent %}
+        <p>Form sent by success!</p>
+        <p>The generated link is : <a href="http://localhost:8000/r/{{ code }}">http://localhost:8000/r/{{ code }}</a></p>
+    {% endif %}
     <form action="{% url 'form' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
